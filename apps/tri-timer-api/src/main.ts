@@ -23,13 +23,17 @@ const apolloServer = new ApolloServer({
 
 await apolloServer.start();
 
+app.get('/', (req, res) => {
+  res.json({ message: 'Hello API' });
+});
 app.use('/graphql', cors(), express.json(), expressMiddleware(apolloServer));
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 const port = process.env.PORT || 3333;
 const server = httpServer.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}/graphql`);
+  console.log(`Listening at http://localhost:${port}/`);
+  console.log(`GraphQL listening at http://localhost:${port}/graphql`);
 });
 
 server.on('error', console.error);

@@ -1,0 +1,9 @@
+{
+  "name": "tri-timer-frontend",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/tri-timer-frontend/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project tri-timer-frontend --web",
+  "targets": {}
+}
